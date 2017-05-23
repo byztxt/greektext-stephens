@@ -9,6 +9,12 @@ This repo contains Dr. Robinson's New Testament Greek text of Robert
 Estienne's (Stephens') edition Textus Receptus. Text only.
 
 
+## Internet addresses?
+
+1. https://www.byzantinetext.com
+
+2. https://github.com/byztxt/
+
 ## License?
 
 Public Domain.  Copy freely.
