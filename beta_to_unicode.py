@@ -56,28 +56,31 @@ for book in book_list:
         clean = clean.replace("v", "s")
         clean = clean.replace("c", "j")  # 1. replacing c with x (using j as a placeholder)
         clean = clean.replace("x", "c")  # 2.
+        clean = clean.replace("X", "c")  # catch capitals in the [headers]
         clean = clean.replace("j", "x")  # 3.
 
-        clean = clean.replace("y", "j")      # 1. replacing y with q (using j as a placeholder)
-        clean = clean.replace("Y", "j")
-        clean = clean.replace("q", "y")      # 2.
-        clean = clean.replace("j", "q")      # 3.
+        clean = clean.replace("y", "j")  # 1. replacing y with q (using j as a placeholder)
+        clean = clean.replace("Y", "j")  # catch capitals in the [headers]
+        clean = clean.replace("q", "y")  # 2.
+        clean = clean.replace("j", "q")  # 3.
 
         # Convert from betacode to unicode using https://github.com/perseids-tools/beta-code-py
         clean = beta_code.beta_code_to_greek(clean)  # convert to unicode Greek letters
 
         # Final cleanup
-        clean = re.sub(r"(?m)^[ ]{6,}(?=\d+)", "", clean)      # Remove leading spaces before references
-        clean = re.sub(r"[ ]{2,}", " ", clean)                 # Remove extra spaces
-        clean = re.sub(r"σ\b", "ς", clean)            # Fix final sigmas
-        clean = re.sub(" --", "\u2014", clean)        # Convert dashes to em dashes
-        clean = re.sub("\n\n", "\n\u00B6", clean)     # Indicate original paragraphing with a 'pilcrow' (¶)
-        clean = re.sub("\n", "", clean)               # Remove all line breaks
-        clean = re.sub("(?<=[0-9])·", ":", clean)     # Fix references that were mangled by beta_code
-        clean = re.sub("(\d+:\d+ )", "\n\\1", clean)  # find all verse beginnings and add a line break before them
-        clean = re.sub("(?m)^\n", "", clean)          # Remove extra line break at beginning of file
-        clean = re.sub("\u00B6", "\n", clean)         # Restore original paragraphing
-        clean = re.sub(r"(1:1) (\[.*?\])", r"\2\n\1", clean)  # Move heading to first line of file
+        clean = re.sub(r"(?m)^[ ]{6,}(?=\d+)", "", clean)       # Remove leading spaces before references
+        clean = re.sub(r"[ ]{2,}", " ", clean)                  # Remove extra spaces
+        clean = re.sub(r"σ\b", "ς", clean)                      # Fix final sigmas
+        clean = re.sub(" --", "\u2014", clean)                  # Convert dashes to em dashes
+        clean = re.sub("\n\n", "\n\u00B6", clean)               # Indicate original paragraphing with a 'pilcrow' (¶)
+        clean = re.sub("\n", "", clean)                         # Remove all line breaks
+        clean = re.sub("(?<=[0-9])·", ":", clean)               # Fix references that were mangled by beta_code
+        clean = re.sub("(\d+:\d+ )", "\n\\1", clean)            # find all verse beginnings and add a line break before them
+        clean = re.sub("(?m)^\n", "", clean)                    # Remove extra line break at beginning of file
+        clean = re.sub("\u00B6", "\n", clean)                   # Restore original paragraphing
+        clean = re.sub(r"(1:1) (\[.*?\])", r"\2\n\1", clean)    # Move heading to first line of file
+        clean = re.sub(r"(1:1)\n", r"\1", clean)                # hack to fix MT.STV file with extra line breaks at the beginning
+        
 
     # Save the Unicode text to a file in the "unicode" subfolder
     with open(os.path.join(folder_path, "unicode", book + ".txt"), "w", encoding="utf-8") as outputfile:
