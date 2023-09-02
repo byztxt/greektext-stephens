@@ -1,47 +1,13 @@
-# greektext-stephens
+# Stephens' *Textus Receptus* in Greek
 
-## What is this?
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/ByzTxt/greektext-stephens?style=for-the-badge)
 
-This is the official GitHub home for Dr. Maurice A. Robinson's Greek
-texts with morphological parsing and Strong's numbers.
+Welcome to the official GitHub home of [Dr. Maurice A. Robinson](https://en.wikipedia.org/wiki/Maurice_A._Robinson)'s Greek
+texts with variants, morphological parsing, and Strong's numbers.
 
 This repo contains Dr. Robinson's New Testament Greek text of Robert
-Estienne's (Stephens') edition Textus Receptus. Text only.
+Estienne's (Stephens') edition *Textus Receptus* (text only).
 
+You can find out more about this transcription at [https://www.byzantinetext.com](https://www.byzantinetext.com).
 
-## Internet addresses?
-
-1. https://www.byzantinetext.com
-
-2. https://github.com/byztxt/
-
-## License?
-
-Public Domain.  Copy freely.
-
-## Responsible parties?
-
-- Dr. Maurice A. Robinson, Wake Forest, North Carolina, USA is the
-  primary author.
-
-- Dr. Ulrik Sandborg-Petersen, Scripture Systems ApS, Denmark, is the
-  maintainer of this repo.
-
-## Maintenance?
-
-Yes.
-
-1. Dr. Robinson sometimes sends updates to Ulrik.
-
-2. Should you find any errors, please inform Ulrik via email or a
-Github pull request.  Ulrik will then correspond with Dr. Robinson to
-resolve any issues in his upstream version, and then publish a new
-drop here.
-
-
-## Contact?
-
-Please write to Ulrik Sandborg-Petersen via
-ulrikp-write-the-sign-scripturesys-dot-com.
-
-
+This work is licensed to the Public Domain.
